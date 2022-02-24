@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import { Layout, Menu } from 'antd';
 import { Link, Route, Switch} from "react-router-dom";
 import {
@@ -9,40 +9,14 @@ import {
 import Dashboard from "../Dashboard/Dashboard";
 import Categories from "../Categories/Categories";
 import Products from "../Products/Products";
-import { useSelector, useDispatch } from "react-redux";
-import { getLocalData } from "../../redux/actions/action";
 
 const { Header, Sider, Content } = Layout;
 
 const SiderDemo = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const dataForSave = useSelector((store) => store.data);
-  const dispatch = useDispatch();
-
-  useEffect(() => { 
-    localGet();
-  }, []);
-
   const toggle = () => {
     setCollapsed(!collapsed);
   };
-
-  const localSave = (datSave) => {
-        localStorage.setItem("data", JSON.stringify(datSave));
-  }
-
-  const localGet = () => {
-      if(localStorage.getItem("data") === null) {
-          localStorage.setItem("data", JSON.stringify([]));
-      } else {
-          let dataLocal = JSON.parse(localStorage.getItem("data"));
-          dispatch(getLocalData(dataLocal));
-      }
-  }
-
-   useEffect(() => {
-      localSave(dataForSave);
-   },[dataForSave]);
 
   return (
     <Layout>

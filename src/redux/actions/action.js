@@ -14,14 +14,5 @@ export const addNewAllCategories = (newData) => {
     }
 }
 
-export const getLocalData = (newData) => {
-    // console.log(newData.allCategories[0].img1.props?)
-    return {
-        type: actiontypes.GETLOCALSER,
-        payload: newData
-    }
-}
-
-
 
 

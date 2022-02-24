@@ -105,7 +105,6 @@ const ModalWindow = ({store,idDlete,editDeleteController,setEditDeleteController
     reader.readAsDataURL(e.target.files[0]);
   }
 
-  // cancel btn
   const handleCancel = () => {
     setIsModalVisible(false);
   };
@@ -115,13 +114,14 @@ const ModalWindow = ({store,idDlete,editDeleteController,setEditDeleteController
       <Button icon={<PlusOutlined/>} type="primary" onClick={showModal}>
         Add
       </Button>
-      <Modal
-        title="Add new categories"
-        visible={isModalVisible}
-        onOk={handleOk}
-        onCancel={handleCancel}
-      >
-        <Input.Group size="large">
+        <Modal
+          title="Add new categories"
+          visible={isModalVisible}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          onSubmit={handleOk}
+        >
+          <Input.Group size="large">
           <Row gutter={8}>
             <Col span={10}>
                <Input

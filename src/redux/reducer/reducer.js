@@ -1,7 +1,7 @@
 import { actiontypes } from "../actiontypes/actiontypes";
 
 const initalStore = {
-    categories: [],
+    categories: [{key: 1, nomi: "Laptop", no: 1}],
     allCategories: []
 };
 const todoReducer = (store = initalStore, action) => {
@@ -16,8 +16,6 @@ const todoReducer = (store = initalStore, action) => {
                 ...store,
                 allCategories: [...action.payload]
             };
-        case actiontypes.GETLOCALSER:
-            return store = action.payload;
         default:
             return store;
     }
