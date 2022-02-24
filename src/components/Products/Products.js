@@ -27,8 +27,8 @@ const Products = () => {
   const [filterStore, setFilterStore] = useState([]);
 
   useEffect(() => {
-    filter();
-  },[]);
+    filter(dataForSave.categories);
+  },[dataForSave.categories]);
 
   const deleteHendler = () => {
     const str = data;
@@ -54,8 +54,8 @@ const Products = () => {
     setImgTwo(newData.img2);
   }
 
-  const filter = () => {
-    const filterData = dataForSave.categories;
+  const filter = (dStor) => {
+    const filterData = dStor;
     const newArr = [];
     filterData.map(item => {
       return newArr.push({

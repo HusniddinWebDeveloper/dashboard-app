@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import { Mix } from '@ant-design/plots';
 import Data from "../../assets/Data";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const DemoMix = () => {
   const [data, setData] = useState({});
@@ -13,7 +12,7 @@ const DemoMix = () => {
 
   useEffect(() => {
     asyncFetch();
-  }, []);
+  });
 
   const asyncFetch = () => {
     setData(Data);
@@ -30,7 +29,7 @@ const DemoMix = () => {
 			      "name": item.categories,
 			      "bill": Number(item.price),
   				};
-  				productsArray.push(prod);
+  			return	productsArray.push(prod);
   		});
   	setProductsChart(productsArray);
 
@@ -42,8 +41,8 @@ const DemoMix = () => {
   		let counter = 0;
   		categoriesGroup.filter((item) => {
   			if(itemCategories.nomi === item){
-  				counter += 1;
-  			}
+  			 return	counter += 1;
+  			} return counter;
   		});
 
   		const categorie = {
@@ -51,7 +50,7 @@ const DemoMix = () => {
 					       "cat": itemCategories.key,
 					       "count": counter
 					   };
-		categroiesChartData.push(categorie);
+		  return categroiesChartData.push(categorie);
   	});
   	setCategoriesChart(categroiesChartData);
   };

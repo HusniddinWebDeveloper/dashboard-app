@@ -1,14 +1,9 @@
 import React, { useState, useRef } from "react";
-import { Modal, Button, Col, Row, Upload, Input, Typography, Select, InputNumber } from "antd";
+import { Modal, Button, Col, Row, Input, Typography, Select } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import {  addNewAllCategories } from "../../../redux/actions/action";
-import {  UploadOutlined,PlusOutlined } from '@ant-design/icons';
+import {  PlusOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.min.css';
-
-import {
-  EditOutlined,
-  DeleteOutlined,
-} from '@ant-design/icons';
 
 const { Text } = Typography;
 const { Option } = Select;

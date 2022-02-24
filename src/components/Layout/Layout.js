@@ -27,9 +27,8 @@ const SiderDemo = () => {
     setCollapsed(!collapsed);
   };
 
-
-  const localSave = () => {
-        localStorage.setItem("data", JSON.stringify(dataForSave));
+  const localSave = (datSave) => {
+        localStorage.setItem("data", JSON.stringify(datSave));
   }
 
   const localGet = () => {
@@ -42,7 +41,7 @@ const SiderDemo = () => {
   }
 
    useEffect(() => {
-      localSave();
+      localSave(dataForSave);
    },[dataForSave]);
 
   return (
